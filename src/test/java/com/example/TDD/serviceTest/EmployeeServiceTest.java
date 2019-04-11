@@ -42,10 +42,10 @@ public class EmployeeServiceTest {
     @Test
     public void testGetAllEmployees(){
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee(10,"Nitin",5000,new Address(100,"MG road","Nashik","422103")));
-        employees.add(new Employee(20,"Sagar",5652,new Address(100,"FC road","Pune","14411")));
-        employees.add(new Employee(30,"Sachin",1244,new Address(100,"JM road","Mumbai","456545")));
-        employees.add(new Employee(40,"Amol",2000,new Address(100,"KFC road","Nashik","411028")));
+        employees.add(new Employee(10,"Nitin",5000));
+        employees.add(new Employee(20,"Sagar",5652));
+        employees.add(new Employee(30,"Sachin",1244));
+        employees.add(new Employee(40,"Amol",2000));
 
         when(employeeRepository.findAll()).thenReturn(employees);
 
@@ -55,18 +55,17 @@ public class EmployeeServiceTest {
 
     @Test
     public void createEmployeeTest(){
-        Employee employee = new Employee(10,"Nitin",5000,new Address(100,"MG road","Nashik","422103"));
+        Employee employee = new Employee(10,"Nitin",5000);
         when(employeeRepository.save(employee)).thenReturn(employee);
 
         Employee employeeResult = employeeService.createEmployee(employee);
 
         assertEquals(employeeResult.getId(),10);
-        assertEquals(employeeResult.getAddress().getPinCode(),"422103");
     }
 
     @Test
     public void getEmployeeTest(){
-        Employee employee = new Employee(10,"Nitin",5000,new Address(100,"MG road","Nashik","422103"));
+        Employee employee = new Employee(10,"Nitin",5000);
         when(employeeRepository.findById(10)).thenReturn(Optional.of(employee));
 
         Employee employeeResult = employeeService.getEmployeeById(10);
@@ -74,7 +73,7 @@ public class EmployeeServiceTest {
     }
     @Test
     public void deleteEmployeeTest(){
-        Employee employee = new Employee(10,"Nitin",5000,new Address(100,"MG road","Nashik","422103"));
+        Employee employee = new Employee(10,"Nitin",5000);
 
         employeeService.deleteEmployee(employee.getId());
 

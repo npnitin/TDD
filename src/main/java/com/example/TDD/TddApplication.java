@@ -19,10 +19,10 @@ public class TddApplication {
 	@Bean
 	public CommandLineRunner setup(EmployeeRepository employeeRepository){
 		return (args)->{
-			employeeRepository.save(new Employee(10,"Nitin",5000,new Address(100,"MG road","Nashik","422103")));
-			employeeRepository.save(new Employee(20,"Sagar",5652,new Address(100,"FC road","Pune","14411")));
-			employeeRepository.save(new Employee(30,"Sachin",1244,new Address(100,"JM road","Mumbai","456545")));
-			employeeRepository.save(new Employee(40,"Amol",2000,new Address(100,"KFC road","Nashik","411028")));
+			employeeRepository.save(new Employee(10,"Nitin",5000));
+			employeeRepository.save(new Employee(20,"Sagar",5652));
+			employeeRepository.save(new Employee(30,"Sachin",1244));
+			employeeRepository.save(new Employee(40,"Amol",2000));
 		};
 	}
 }

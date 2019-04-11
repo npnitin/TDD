@@ -40,7 +40,7 @@ public class EmployeeControllerTest {
     public void TestGetAllEmployees() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders.get("/employee")
                 .accept(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers
-                        .jsonPath("$",hasSize(4))).andDo(MockMvcResultHandlers.print());
+                .andExpect(MockMvcResultMatchers.jsonPath("$",hasSize(4)));
+
     }
 }

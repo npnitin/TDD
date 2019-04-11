@@ -14,15 +14,12 @@ public class Employee {
     private int id;
     private String name;
     private double salary;
-    @OneToOne
-    private Address address;
 
     public Employee(){}
-    public Employee(int id,String name,double salary,Address address){
+    public Employee(int id,String name,double salary){
         this.id=id;
         this.name=name;
         this.salary=salary;
-        this.address=address;
     }
 
     public int getId() {
@@ -33,20 +30,12 @@ public class Employee {
         return name;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 
     public void setSalary(double salary) {
